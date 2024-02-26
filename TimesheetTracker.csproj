@@ -44,4 +44,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="&#xD;&#xA;&quot;C:\Program Files (x86)\Microsoft SDKs\ClickOnce\SignTool\signtool.exe&quot;  sign /debug /fd SHA256 /f &quot;X:\AAM-WORKGROUP DATA\AAM_BIM\AAM_BIMRESOURCES\AAM Revit Plugins\Resources\Security\AAMCERT.pfx&quot; /p AAMBIM &quot;$(TargetPath)&quot;&#xD;&#xA;&#xD;&#xA;" />
+  </Target>
+
 </Project>
