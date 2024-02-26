@@ -26,7 +26,6 @@ namespace TimesheetTracker
             // subscribe to the on open or on show event
             Loaded += Window_Loaded;
             ShowInTaskbar = false;
-            this.Hide();
         }
 
         // override the on open or on show event
@@ -73,12 +72,6 @@ namespace TimesheetTracker
             e.Cancel = true;
 
             // Hide the window instead of closing
-            this.Hide();
-        }
-
-
-        private void Window_Deactivated(object sender, EventArgs e)
-        {
             this.Hide();
         }
 

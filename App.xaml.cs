@@ -94,16 +94,11 @@ namespace TimesheetTracker
 
         private void ShowMainWindow()
         {
-            if (!_mainWindow.IsVisible)
-            {
+           
                 _mainWindow.Show();
                 _mainWindow.Activate();
                 _mainWindow.AddNewTask();
-            }
-            else
-            {
-                _mainWindow.Hide();
-            }
+            
         }
 
         private void Timer_Tick(object sender, EventArgs e)

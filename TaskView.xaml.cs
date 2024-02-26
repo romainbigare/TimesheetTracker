@@ -60,6 +60,7 @@ namespace TimesheetTracker
             CbProjectName.Loaded += (s, e) => CbLoaded(CbProjectName);
             CbProjectNumber.Loaded += (s, e) => CbLoaded(CbProjectNumber);
             CbDescription.Loaded += (s, e) => CbLoaded(CbDescription);
+            TbHours.TextChanged += (s, e) => DebouncerUpdate.Debounce(UpdateThisTask);
         }
 
         private void CbLoaded(ComboBox cb)
