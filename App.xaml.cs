@@ -94,18 +94,18 @@ namespace TimesheetTracker
 
         private void ShowMainWindow()
         {
-           
-                _mainWindow.Show();
-                _mainWindow.Activate();
-                _mainWindow.AddNewTask();
-            
+            _mainWindow.Show();
+            _mainWindow.Activate();
+            _mainWindow.Focus();
+            _mainWindow.Topmost = true;
+            _mainWindow.AddNewTask();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             // Check if it's a weekday and time is between 11am and 6pm
             if (DateTime.Now.DayOfWeek != DayOfWeek.Saturday && DateTime.Now.DayOfWeek != DayOfWeek.Sunday &&
-                DateTime.Now.Hour >= 11 && DateTime.Now.Hour <= 18)
+                DateTime.Now.Hour >= 11 && DateTime.Now.Hour <= 21)
             {
                 ShowMainWindow();
             }
