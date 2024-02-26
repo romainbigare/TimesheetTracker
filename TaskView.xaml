@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="TimesheetTracker.TaskView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TimesheetTracker"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/TimesheetTracker;component/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width=".5*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" 
+                   Name="TbDate" 
+                   Margin="5"
+                   Text="12:45  01/01/2020"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   />
+
+        <ComboBox Grid.Column="1" 
+                  Name="CbProjectNumber"
+                  Margin="5"
+                  IsEditable="True"
+                  Style="{StaticResource theComboBox}"
+                  ItemContainerStyle="{StaticResource theComboBoxItem}"
+                  />
+        
+        <ComboBox Grid.Column="2" 
+                  Name="CbProjectName"
+                  Margin="5"
+                  IsEditable="True"
+                  Style="{StaticResource theComboBox}"
+                  ItemContainerStyle="{StaticResource theComboBoxItem}"
+                  />
+
+        <ComboBox Grid.Column="3" 
+                Name="CbDescription" 
+                 Margin="5"
+                  IsEditable="True"
+                 Tag="Task Description"
+                  Style="{StaticResource theComboBox}"
+                  ItemContainerStyle="{StaticResource theComboBoxItem}"
+                 />
+
+        <TextBox Grid.Column="4" 
+                 Name="TbHours" 
+                 Text="1"
+                 Margin="5"
+                 Style="{StaticResource MaterialDesignTextBoxStyle}"
+                 />
+
+        <StackPanel Grid.Column="5" Orientation="Horizontal" Margin="17,0,0,0">
+            <Button Name="AddButton" Content="+" Margin="3" Background="White" Click="AddButton_Click" Width="20" Style="{StaticResource WhiteRoundButton}"/>
+            <Button Name="RemoveButton" Content="-" Margin="3" Background="White" Click="RemoveButton_Click"  Width="20" Style="{StaticResource WhiteRoundButton}"/>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>
